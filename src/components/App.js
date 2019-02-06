@@ -8,10 +8,10 @@ import React, { Component } from "react";
  *  right: <UserInput>
  */
 
-class App extends Component {
+class Modal extends Component {
 	render() {
-		return <div>App</div>;
+		return <div>Modal</div>;
 	}
 }
 
-export default App;
+export default Modal;
