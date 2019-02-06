@@ -9,13 +9,23 @@ import Modal from "./Modal";
  */
 
 class App extends Component {
+	constructor() {
+		super();
+		this.state = {
+			modalIsOpen: false
+		};
+		this.openModal = this.openModal.bind(this);
+	}
+	openModal = () => {
+		this.setState({
+			modalIsOpen: true
+		});
+	};
 	render() {
 		return (
 			<div>
-				<button>Show Modal</button>
-				<div className="modal-contaner">
-					<Modal />
-				</div>
+				<button onClick={this.openModal}>Show Modal</button>
+				{this.state.modalIsOpen && <Modal />}
 			</div>
 		);
 	}
