@@ -10,7 +10,7 @@ import React, { Component } from "react";
 
 class Modal extends Component {
 	render() {
-		return <div>Modal</div>;
+		return <div className="modal-contaner">This is modal</div>;
 	}
 }
 
