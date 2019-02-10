@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import "../scss/App.scss";
 import Modal from "./Modal";
+
 /**
  * Modal structure: header -> body -> footer
  *
