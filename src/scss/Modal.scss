@@ -62,7 +62,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	min-height: 664px;
+	height: 664px;
 	.modal-content-left,
 	.modal-content-right {
 		max-width: 50%;
@@ -96,7 +96,58 @@
 		}
 	}
 }
+.task-item {
+	.meta {
+		margin: 5px 0;
+		color: #7f8b94;
+		font-size: 14px;
+		font-family: SFProText-Regular;
+		font-weight: normal;
+		letter-spacing: -0.15px;
+		line-height: 19px;
 
+		.task-id {
+			margin-right: 5px;
+		}
+	}
+
+	.title {
+		max-width: 260px;
+		margin: 5px 0;
+		color: #374047;
+		font-size: 19px;
+		font-family: SFProDisplay-Regular;
+		font-weight: normal;
+		letter-spacing: 0.32px;
+		line-height: 24px;
+	}
+
+	blockquote {
+		margin: 5px 0;
+		max-width: 280px;
+		height: 38px;
+		color: #7f8b94;
+		font-size: 14px;
+		font-family: SFProText-Regular;
+		font-weight: normal;
+		letter-spacing: -0.15px;
+		line-height: 19px;
+	}
+	.sub-meta {
+		height: 16px;
+		color: #7f8b94;
+		font-size: 12px;
+		font-family: SFProText-Bold;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0;
+		line-height: 16px;
+	}
+	hr {
+		margin: 15px 0;
+		border: 1px solid #e8ebed;
+	}
+}
 .modal-footer {
 	background-color: #f7f9fa;
 	height: 72px;

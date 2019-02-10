@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TaskItem from "./TaskItem";
 import ModalHeader from "./ModalHeader";
 import ModalFooter from "./ModalFooter";
 import ModalContent from "./ModalContent";
@@ -54,17 +55,7 @@ class Modal extends Component {
 	}
 	renderTaskList() {
 		return this.state.taskList.map(task => {
-			return (
-				<div key={task.ID}>
-					<p>
-						<span className="task-id">#{task.ID}</span>
-						<span className="updated-date">{task.updated_Date.toLocaleDateString()}</span>
-					</p>
-					<p>{task.title}</p>
-					<p>{task.description}</p>
-					<p />
-				</div>
-			);
+			return <TaskItem task={task} key={task.ID} />;
 		});
 	}
 	render() {
