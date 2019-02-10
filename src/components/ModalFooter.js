@@ -10,7 +10,7 @@ class ModalFooter extends Component {
 				<button className="cancel" onClick={this.props.closeModal}>
 					Cancel
 				</button>
-				<button className="save" onClick={this.submitForm}>
+				<button className={`save ${this.props.checkFieldsEmpty === true ? "is-inactive" : ""}`} onClick={this.submitForm}>
 					Save Changes
 				</button>
 			</div>

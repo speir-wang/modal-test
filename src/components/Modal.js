@@ -16,6 +16,8 @@ class Modal extends Component {
 		super(props);
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleEmailChange = this.handleEmailChange.bind(this);
+		this.checkFieldsEmpty = this.checkFieldsEmpty.bind(this);
+
 		this.state = {
 			taskList: [
 				{
@@ -53,6 +55,11 @@ class Modal extends Component {
 			email: e.target.value
 		});
 	}
+	checkFieldsEmpty() {
+		if (this.state.name === "" || this.state.email === "") return true;
+
+		return false;
+	}
 	renderTaskList() {
 		return this.state.taskList.map(task => {
 			return <TaskItem task={task} key={task.ID} />;
@@ -81,7 +88,7 @@ class Modal extends Component {
 						</div>
 					</section>
 				</div>
-				<ModalFooter closeModal={this.props.onCloseModal} />
+				<ModalFooter closeModal={this.props.onCloseModal} checkFieldsEmpty={this.checkFieldsEmpty()} />
 			</div>
 		);
 	}
