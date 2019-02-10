@@ -71,12 +71,68 @@
 	}
 	.modal-content-left {
 		border-right: 1px solid #e8ebed;
+
+		// target last task item
+		> div:last-of-type {
+			hr {
+				display: none;
+			}
+		}
+	}
+
+	.task-item {
+		.meta {
+			margin: 5px 0;
+			color: #7f8b94;
+			font-size: 14px;
+			font-weight: normal;
+			letter-spacing: -0.15px;
+			line-height: 19px;
+
+			.task-id {
+				margin-right: 5px;
+			}
+		}
+
+		.title {
+			max-width: 336px;
+			margin: 5px 0;
+			color: #374047;
+			font-size: 19px;
+			font-weight: normal;
+			letter-spacing: 0.32px;
+			line-height: 24px;
+		}
+
+		blockquote {
+			margin: 0;
+
+			color: #7f8b94;
+			font-size: 14px;
+			font-weight: normal;
+			letter-spacing: -0.15px;
+			line-height: 19px;
+			max-width: 316px;
+		}
+		.sub-meta {
+			height: 16px;
+			color: #7f8b94;
+			font-size: 12px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 0;
+			line-height: 16px;
+			margin-bottom: 0;
+		}
+		hr {
+			margin: 15px 0;
+			border: 1px solid #e8ebed;
+		}
 	}
 
 	label {
 		color: #374047;
 		font-size: 14px;
-		font-family: SFProText-Semibold;
 		font-weight: 600;
 		letter-spacing: -0.15px;
 		line-height: 16px;
@@ -91,63 +147,14 @@
 		border: 1px solid #cfd3d6;
 		margin-bottom: 15px;
 		border-radius: 3px 3px 3px 3px;
-		::placeholder {
+		font-size: 14px;
+		&::placeholder {
 			color: #cfd3d6;
+			font-family: Helvetica, sans-serif;
 		}
 	}
 }
-.task-item {
-	.meta {
-		margin: 5px 0;
-		color: #7f8b94;
-		font-size: 14px;
-		font-family: SFProText-Regular;
-		font-weight: normal;
-		letter-spacing: -0.15px;
-		line-height: 19px;
 
-		.task-id {
-			margin-right: 5px;
-		}
-	}
-
-	.title {
-		max-width: 260px;
-		margin: 5px 0;
-		color: #374047;
-		font-size: 19px;
-		font-family: SFProDisplay-Regular;
-		font-weight: normal;
-		letter-spacing: 0.32px;
-		line-height: 24px;
-	}
-
-	blockquote {
-		margin: 5px 0;
-		max-width: 280px;
-		height: 38px;
-		color: #7f8b94;
-		font-size: 14px;
-		font-family: SFProText-Regular;
-		font-weight: normal;
-		letter-spacing: -0.15px;
-		line-height: 19px;
-	}
-	.sub-meta {
-		height: 16px;
-		color: #7f8b94;
-		font-size: 12px;
-		font-family: SFProText-Bold;
-		font-weight: bold;
-		text-transform: uppercase;
-		letter-spacing: 0;
-		line-height: 16px;
-	}
-	hr {
-		margin: 15px 0;
-		border: 1px solid #e8ebed;
-	}
-}
 .modal-footer {
 	background-color: #f7f9fa;
 	height: 72px;
@@ -164,7 +171,6 @@
 		border-radius: 3px 3px 3px 3px;
 		color: #e6f6ff;
 		font-size: 14px;
-		font-family: SFProText-Bold;
 		font-weight: bold;
 		letter-spacing: 0;
 		line-height: 15px;
@@ -174,7 +180,6 @@
 		height: 40px;
 		color: #7f8b94;
 		font-size: 14px;
-		font-family: SFProText-Bold;
 		font-weight: bold;
 		letter-spacing: 0;
 		line-height: 15px;

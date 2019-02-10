@@ -12,8 +12,8 @@ import ModalContent from "./ModalContent";
  */
 
 class Modal extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.state = {
@@ -89,7 +89,7 @@ class Modal extends Component {
 						</div>
 					</section>
 				</div>
-				<ModalFooter />
+				<ModalFooter closeModal={this.props.onCloseModal} />
 			</div>
 		);
 	}

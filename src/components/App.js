@@ -17,17 +17,24 @@ class App extends Component {
 			modalIsOpen: false
 		};
 		this.openModal = this.openModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
 	}
 	openModal = () => {
 		this.setState({
 			modalIsOpen: true
 		});
 	};
+
+	closeModal = () => {
+		this.setState({
+			modalIsOpen: false
+		});
+	};
 	render() {
 		return (
 			<div>
 				<button onClick={this.openModal}>Show Modal</button>
-				{this.state.modalIsOpen && <Modal />}
+				{this.state.modalIsOpen && <Modal onCloseModal={this.closeModal} />}
 			</div>
 		);
 	}
