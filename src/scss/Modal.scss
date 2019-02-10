@@ -72,6 +72,29 @@
 	.modal-content-left {
 		border-right: 1px solid #e8ebed;
 	}
+
+	label {
+		color: #374047;
+		font-size: 14px;
+		font-family: SFProText-Semibold;
+		font-weight: 600;
+		letter-spacing: -0.15px;
+		line-height: 16px;
+		display: block;
+		margin-bottom: 5px;
+	}
+	input {
+		padding: 13px;
+		width: 336px;
+		height: 40px;
+		background: #ffffff;
+		border: 1px solid #cfd3d6;
+		margin-bottom: 15px;
+		border-radius: 3px 3px 3px 3px;
+		::placeholder {
+			color: #cfd3d6;
+		}
+	}
 }
 
 .modal-footer {

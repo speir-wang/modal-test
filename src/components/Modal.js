@@ -82,11 +82,17 @@ class Modal extends Component {
 				<div className="modal-content">
 					<section className="modal-content-left">{this.renderTaskList()}</section>
 					<section className="modal-content-right">
-						<div>
+						<div className="input-field">
 							<label htmlFor="name">Name</label>
-							<input placeholder="First and Last name..." value={this.state.name} type="text" id="name" onChange={this.handleNameChange} />
+							<input
+								placeholder="First and Last name..."
+								value={this.state.name}
+								type="text"
+								id="name"
+								onChange={this.handleNameChange}
+							/>
 						</div>
-						<div>
+						<div className="input-field">
 							<label htmlFor="email">Email</label>
 							<input placeholder="Work email..." value={this.state.email} type="email" id="email" onChange={this.handleEmailChange} />
 						</div>
