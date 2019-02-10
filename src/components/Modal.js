@@ -13,6 +13,8 @@ import ModalContent from "./ModalContent";
 class Modal extends Component {
 	constructor() {
 		super();
+		this.handleNameChange = this.handleNameChange.bind(this);
+		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.state = {
 			taskList: [
 				{
@@ -33,8 +35,22 @@ class Modal extends Component {
 					title: "Crucial unit running after hours: Schedule changed",
 					description: "AHU-PR12_2 is observed to be running till 6pm when the schedule is until 5:30pm…"
 				}
-			]
+			],
+			name: "",
+			email: ""
 		};
+	}
+	handleNameChange(e) {
+		console.log(e.target.value);
+		this.setState({
+			name: e.target.value
+		});
+	}
+	handleEmailChange(e) {
+		console.log(e.target.value);
+		this.setState({
+			email: e.target.value
+		});
 	}
 	renderTaskList() {
 		return this.state.taskList.map(task => {
@@ -68,11 +84,11 @@ class Modal extends Component {
 					<section className="modal-content-right">
 						<div>
 							<label htmlFor="name">Name</label>
-							<input type="text" id="name" />
+							<input placeholder="First and Last name..." value={this.state.name} type="text" id="name" onChange={this.handleNameChange} />
 						</div>
 						<div>
 							<label htmlFor="email">Email</label>
-							<input type="email" id="email" />
+							<input placeholder="Work email..." value={this.state.email} type="email" id="email" onChange={this.handleEmailChange} />
 						</div>
 					</section>
 				</div>
