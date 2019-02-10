@@ -1,0 +1,111 @@
+.modal-container {
+	width: 800px;
+	height: 800px;
+	background: #ffffff;
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px 5px 5px 5px;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.modal-header {
+	width: 800px;
+	height: 64px;
+	background: #f7f9fa;
+	border-radius: 5px 5px 0 0;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+
+	section.left {
+		flex-basis: 50%;
+		max-width: 50%;
+		padding: 0 16px;
+	}
+	section.right {
+		flex-basis: 50%;
+		max-width: 50%;
+		text-align: right;
+		padding: 0 16px;
+	}
+	span {
+		height: 16px;
+		font-size: 12px;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0;
+		line-height: 16px;
+		display: inline-block;
+
+		&.current-widget {
+			width: 120px;
+			color: #374047;
+			margin: 0 16px;
+		}
+
+		&.add-widget {
+			margin: 0 16px;
+			color: #7f8b94;
+			text-decoration: underline;
+			width: 80px;
+		}
+	}
+}
+
+.modal-content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	min-height: 664px;
+	.modal-content-left,
+	.modal-content-right {
+		max-width: 50%;
+		flex-basis: 50%;
+		padding: 32px;
+	}
+	.modal-content-left {
+		border-right: 1px solid #e8ebed;
+	}
+}
+
+.modal-footer {
+	background-color: #f7f9fa;
+	height: 72px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 16px;
+	button.save {
+		width: 124px;
+		height: 40px;
+		background: #0867d2;
+		border: 1px solid #0552b5;
+		border-radius: 3px 3px 3px 3px;
+		color: #e6f6ff;
+		font-size: 14px;
+		font-family: SFProText-Bold;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 15px;
+	}
+	button.cancel {
+		width: 49px;
+		height: 40px;
+		color: #7f8b94;
+		font-size: 14px;
+		font-family: SFProText-Bold;
+		font-weight: bold;
+		letter-spacing: 0;
+		line-height: 15px;
+		margin-right: 16px;
+		border: 0;
+		background-color: #f7f9fa;
+	}
+}
