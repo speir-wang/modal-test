@@ -17,7 +17,7 @@ class Modal extends Component {
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.checkFieldsEmpty = this.checkFieldsEmpty.bind(this);
-
+		this.submitForm = this.submitForm.bind(this);
 		this.state = {
 			taskList: [
 				{
@@ -44,13 +44,13 @@ class Modal extends Component {
 		};
 	}
 	handleNameChange(e) {
-		console.log(e.target.value);
+		// console.log(e.target.value);
 		this.setState({
 			name: e.target.value
 		});
 	}
 	handleEmailChange(e) {
-		console.log(e.target.value);
+		// console.log(e.target.value);
 		this.setState({
 			email: e.target.value
 		});
@@ -58,6 +58,21 @@ class Modal extends Component {
 	checkFieldsEmpty() {
 		if (this.state.name === "" || this.state.email === "") return true;
 
+		return false;
+	}
+
+	submitForm() {
+		// regular expression for checking email validation is from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+
+		const emailChecker = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		if (!this.checkFieldsEmpty() && emailChecker.test(String(this.state.email).toLocaleLowerCase())) {
+			console.log("form input are valid");
+			this.props.onCloseModal();
+			return true;
+		}
+
+		console.log("form input are invalid");
 		return false;
 	}
 	renderTaskList() {
@@ -88,7 +103,7 @@ class Modal extends Component {
 						</div>
 					</section>
 				</div>
-				<ModalFooter closeModal={this.props.onCloseModal} checkFieldsEmpty={this.checkFieldsEmpty()} />
+				<ModalFooter closeModal={this.props.onCloseModal} checkFieldsEmpty={this.checkFieldsEmpty()} submitForm={this.submitForm} />
 			</div>
 		);
 	}
