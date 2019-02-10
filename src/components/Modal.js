@@ -61,15 +61,7 @@ class Modal extends Component {
 	render() {
 		return (
 			<div className="modal-container">
-				<div className="modal-header">
-					<section className="left">
-						<span className="current-widget">Current Widget</span>
-						<span className="add-widget">Add Widget</span>
-					</section>
-					<section className="right">
-						<span>X</span>
-					</section>
-				</div>
+				<ModalHeader closeModal={this.props.onCloseModal} />
 				<div className="modal-content">
 					<section className="modal-content-left">{this.renderTaskList()}</section>
 					<section className="modal-content-right">

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 class ModalHeader extends Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
 		return (
 			<div className="modal-header">
@@ -9,7 +12,7 @@ class ModalHeader extends Component {
 					<span className="add-widget">Add Widget</span>
 				</section>
 				<section className="right">
-					<span>X</span>
+					<button onClick={this.props.closeModal}>X</button>
 				</section>
 			</div>
 		);
