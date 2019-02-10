@@ -5,7 +5,7 @@ class ModalHeader extends Component {
 		return (
 			<div className="modal-header">
 				<section className="left">
-					<span className="current-widget">Current Widget</span>
+					<span className="current-widget">Current Widgets</span>
 					<span className="add-widget">Add Widget</span>
 				</section>
 				<section className="right">
