@@ -152,6 +152,10 @@
 			color: #cfd3d6;
 			font-family: Helvetica, sans-serif;
 		}
+
+		&.invalid {
+			border: 1px solid red;
+		}
 	}
 }
 

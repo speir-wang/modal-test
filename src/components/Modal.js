@@ -18,6 +18,7 @@ class Modal extends Component {
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.checkFieldsEmpty = this.checkFieldsEmpty.bind(this);
 		this.submitForm = this.submitForm.bind(this);
+		this.emailInput = React.createRef();
 		this.state = {
 			taskList: [
 				{
@@ -61,19 +62,22 @@ class Modal extends Component {
 		return false;
 	}
 
-	submitForm() {
+	submitForm(e) {
 		// regular expression for checking email validation is from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
 
 		const emailChecker = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+		// only add red border when both fields are not empty
+		if (!this.checkFieldsEmpty()) {
+			this.emailInput.current.classList.add("invalid");
+		}
+
 		if (!this.checkFieldsEmpty() && emailChecker.test(String(this.state.email).toLocaleLowerCase())) {
 			console.log("form input are valid");
 			this.props.onCloseModal();
-			return true;
 		}
 
-		console.log("form input are invalid");
-		return false;
+		// return false;
 	}
 	renderTaskList() {
 		return this.state.taskList.map(task => {
@@ -99,7 +103,15 @@ class Modal extends Component {
 						</div>
 						<div className="input-field">
 							<label htmlFor="email">Email</label>
-							<input placeholder="Work email..." value={this.state.email} type="email" id="email" onChange={this.handleEmailChange} />
+							<input
+								// className={this.state.validForm ? "" : "invalid"}
+								ref={this.emailInput}
+								placeholder="Work email..."
+								value={this.state.email}
+								type="email"
+								id="email"
+								onChange={this.handleEmailChange}
+							/>
 						</div>
 					</section>
 				</div>
