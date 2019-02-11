@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import TaskItem from "./TaskItem";
 import ModalHeader from "./ModalHeader";
 import ModalFooter from "./ModalFooter";
-import ModalContent from "./ModalContent";
 /**
  * Modal structure: header -> body -> footer
  *
