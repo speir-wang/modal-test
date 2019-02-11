@@ -34,6 +34,7 @@ class App extends Component {
 		return (
 			<div>
 				<button onClick={this.openModal}>Show Modal</button>
+				{/* conditionally render the modal based on state */}
 				{this.state.modalIsOpen && <Modal onCloseModal={this.closeModal} />}
 			</div>
 		);

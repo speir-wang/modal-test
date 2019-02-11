@@ -1,5 +1,8 @@
 import React from "react";
 import UpArrow from "./UpArrow";
+
+// get this comparing function from https://stackoverflow.com/questions/2536379/difference-in-months-between-two-dates-in-javascript
+
 function monthDifferece(taskDate) {
 	let months,
 		currentDate = new Date();
@@ -10,8 +13,6 @@ function monthDifferece(taskDate) {
 }
 
 const TaskItem = ({ task }) => {
-	// get the method from https://stackoverflow.com/questions/2536379/difference-in-months-between-two-dates-in-javascript
-
 	return (
 		<div className="task-item">
 			{/* icon */}

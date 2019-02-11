@@ -5,6 +5,9 @@ import ModalFooter from "./ModalFooter";
 /**
  * Modal structure: header -> body -> footer
  *
+ * Header and footer are separate components because their usage are pretty
+ * straitght forward.
+ *
  * Modal body:
  *  left: <TastList>
  *  right: <UserInput>
@@ -17,7 +20,10 @@ class Modal extends Component {
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 		this.checkFieldsEmpty = this.checkFieldsEmpty.bind(this);
 		this.submitForm = this.submitForm.bind(this);
+
+		// This ref is used to capture the case when both fields are filled, but the email input is invalid, so it will add a class to email input in order to give it a red border.
 		this.emailInput = React.createRef();
+
 		this.state = {
 			taskList: [
 				{
@@ -78,6 +84,7 @@ class Modal extends Component {
 
 		// return false;
 	}
+	// function to return a list of tasks, extracted out of the render function in order to make the file look a bit cleaner.
 	renderTaskList() {
 		return this.state.taskList.map(task => {
 			return <TaskItem task={task} key={task.ID} />;
@@ -103,7 +110,6 @@ class Modal extends Component {
 						<div className="input-field">
 							<label htmlFor="email">Email</label>
 							<input
-								// className={this.state.validForm ? "" : "invalid"}
 								ref={this.emailInput}
 								placeholder="Work email..."
 								value={this.state.email}
